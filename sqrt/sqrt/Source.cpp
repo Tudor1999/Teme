@@ -4,7 +4,7 @@
 #pragma warning(disable:4996)
 
 int prod(int a, int b);
-void imp(unsigned int a, int b, int &c, int &r);
+void imp(unsigned int a,unsigned int b, int &c, int &r);
 int put(int a, int b);
 int nrc(int a);
 int* grup(unsigned int a, int &z);
@@ -12,15 +12,22 @@ int* grup(unsigned int a, int &z);
 void main()
 {
 	unsigned int a;
-	int z, x = 0;
+	int z,i=0,c=0,x=0, y=0;
 	int* b = 0;
+	int p = 0;
 	scanf("%d", &a);
 	b = grup(a, z);
-	while (x<z)
+	c = b[0];
+	for (i=0;i<z;i++)
 	{
-		printf("%d ", b[x]);
-		x++;
+		while (prod(x, prod(20, p) + x) <= c)
+			x++;
+		p = prod(p, 10) + x;
+		y = prod(x, prod(20, p) + x);
+		c = prod(c, 100) + c;
+		c = c - y;
 	}
+	printf("%d", p);
 	VirtualFree(b, 0, MEM_RELEASE);
 }
 int prod(int a, int b)
@@ -33,7 +40,7 @@ int prod(int a, int b)
 	}
 	return p;
 }
-void imp(unsigned int a, int b, int &c, int &r)
+void imp(unsigned int a, unsigned int b, int &c, int &r)
 {
 	int i = 0;
 	while (a>b)
